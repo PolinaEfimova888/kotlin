@@ -75,7 +75,7 @@ class Validator(var pass: String=" ", var order: String=" ") {
             1 -> if (!rules.checkLetters()) println("Пароль должен содержать буквы как в нижнем, так и в верхнем регистре :с")
             2 -> if (!rules.checkNumbers()) println("Нет цифр!")
             3 -> if (!rules.chechSpecialSymbols()) println("Пароль должен содержать минимум два специальных символа!")
-            4 -> if (!rules.checkInDict()) println("Очен простой пароль :с")
+            4 -> if (!rules.checkInDict()) println("Очень простой пароль :с")
             5 -> if (!rules.checkEntropy()) println("Низкий уровень энтропии")
             else -> throw RulesException("Правила не существует")
         }
