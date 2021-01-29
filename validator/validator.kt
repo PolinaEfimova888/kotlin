@@ -12,7 +12,7 @@ class Validator(var pass: String=" ", var order: String=" ") {
             for (symb in numbers_orders) {
                 when (symb.toInt()) {
                     in 0..N -> checkOrder(symb.toInt())
-                    else -> print("Такого правила не существует")
+                    else -> print("Правила не существует")
                 }
             }
         } else {
@@ -71,11 +71,11 @@ class Validator(var pass: String=" ", var order: String=" ") {
 
     public fun checkOrder(number: Int) {
         when (number) {
-            0 -> if (!rules.checkPasswordLength()) println("Слишком короткий пароль")
-            1 -> if (!rules.checkLetters()) println("Пароль должен содержать минимум по одной букве в верхнем и нижнем регистре")
-            2 -> if (!rules.checkNumbers()) println("В пароле нет цифр")
-            3 -> if (!rules.chechSpecialSymbols()) println("Пароль должен содержать минимум два спец. символа")
-            4 -> if (!rules.checkInDict()) println("Слишком простой пароль")
+            0 -> if (!rules.checkPasswordLength()) println("Короткий пароль!")
+            1 -> if (!rules.checkLetters()) println("Пароль должен содержать буквы как в нижнем, так и в верхнем регистре :с")
+            2 -> if (!rules.checkNumbers()) println("Нет цифр!")
+            3 -> if (!rules.chechSpecialSymbols()) println("Пароль должен содержать минимум два специальных символа!")
+            4 -> if (!rules.checkInDict()) println("Очен простой пароль :с")
             5 -> if (!rules.checkEntropy()) println("Низкий уровень энтропии")
             else -> throw RulesException("Такого правила не существует")
         }
